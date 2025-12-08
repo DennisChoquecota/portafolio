@@ -13,13 +13,19 @@ export function Hero() {
   ];
 
   const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const cambio = setInterval(() => {
-      setIndex((prev) => (prev + 1) % textos.length);
-    }, 4000);
 
-    return () => clearInterval(cambio);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const cambio = setInterval(() => {
+        setIndex((prev) => (prev + 1) % textos.length);
+      }, 4000);
+
+      return () => clearInterval(cambio);
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
+
   useEffect(() => {
     if (!textRef.current) return;
 
@@ -28,11 +34,11 @@ export function Hero() {
     const { words } = splitText(textRef.current, { words: { wrap: "clip" } });
 
     words.forEach((word: HTMLElement) => {
-  word.style.backgroundImage = `linear-gradient(to right, ${textos[index].gradient[0]}, ${textos[index].gradient[1]})`;
-      word.style.backgroundSize = "200% 200%"; // necesario para animar
+      word.style.backgroundImage = `linear-gradient(to right, ${textos[index].gradient[0]}, ${textos[index].gradient[1]})`;
+      word.style.backgroundSize = "200% 200%";
       word.style.webkitBackgroundClip = "text";
       word.style.color = "transparent";
-      word.style.animation = "gradientMove 3s linear infinite"; // aplica la animación a cada palabra
+      word.style.animation = "gradientMove 3s linear infinite";
     });
 
     animate(words, {
