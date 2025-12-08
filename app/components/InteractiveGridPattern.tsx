@@ -43,14 +43,11 @@ export default function InteractiveGridPattern() {
 
       {/* Interactive Highlight Cell */}
       <div
-        className="absolute transition-transform duration-75 ease-out will-change-transform"
+        className="absolute transition-transform duration-75 ease-out will-change-transform grid-hover-neon"
         style={{
           width: `${cellSize}px`,
           height: `${cellSize}px`,
           transform: `translate(${snapX}px, ${snapY}px)`,
-          backgroundColor: "rgba(255, 255, 255, 0.1)", // Highlight color
-          boxShadow: "0 0 10px rgba(255, 255, 255, 0.1)", // Glow effect
-          border: "1px solid rgba(255, 255, 255, 0.2)",
         }}
       />
     </div>
