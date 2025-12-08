@@ -1,18 +1,27 @@
-"use client";
-
-import { useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
 import { animate, stagger } from "animejs";
+import { FaReact, FaGithub, FaGitAlt } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiJavascript,
+  SiPhp,
+  SiLaravel,
+  SiPostgresql,
+} from "react-icons/si";
 
 const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind",
-  "Node.js",
-  "Three.js",
-  "Anime.js",
-  "Figma",
-  "Git",
+  { name: "React", icon: <FaReact className="w-8 h-8" /> },
+  { name: "Next.js", icon: <SiNextdotjs className="w-8 h-8" /> },
+  { name: "TypeScript", icon: <SiTypescript className="w-8 h-8" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="w-8 h-8" /> },
+  { name: "Javascript", icon: <SiJavascript className="w-8 h-8" /> },
+  { name: "PHP", icon: <SiPhp className="w-8 h-8" /> },
+  { name: "Laravel", icon: <SiLaravel className="w-8 h-8" /> },
+  { name: "GitHub", icon: <FaGithub className="w-8 h-8" /> },
+  { name: "Git", icon: <FaGitAlt className="w-8 h-8" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql className="w-8 h-8" /> },
 ];
 
 export function Skills() {
@@ -58,14 +67,17 @@ export function Skills() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {skills.map((skill, index) => (
             <div
-              key={skill}
+              key={skill.name}
               ref={(el) => {
                 itemsRef.current[index] = el;
               }}
-              className="p-6 rounded-2xl bg-neutral-900 border border-white/5 hover:border-pink-500/50 transition-colors duration-300 flex items-center justify-center opacity-0 translate-y-4"
+              className="p-6 rounded-2xl bg-neutral-900 border border-white/5 hover:border-pink-500/50 transition-colors duration-300 flex flex-col items-center justify-center gap-4 opacity-0 translate-y-4 group"
             >
-              <span className="text-lg font-medium text-neutral-300">
-                {skill}
+              <div className="text-pink-500 group-hover:text-violet-500 transition-colors duration-300">
+                {skill.icon}
+              </div>
+              <span className="text-lg font-medium text-neutral-300 group-hover:text-white transition-colors">
+                {skill.name}
               </span>
             </div>
           ))}
