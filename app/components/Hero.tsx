@@ -2,50 +2,39 @@
 
 import { animate, splitText, stagger } from "animejs";
 import { useEffect, useRef, useState } from "react";
+import "./styles.css";
 
 export function Hero() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
-  const buttonsRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const circleRef = useRef<HTMLDivElement>(null);
 
-  // Textos y gradientes alternantes
   const textos = [
-    { text: "Desarrollador Full Stack", gradient: ["#ec4899", "#8b5cf6"] }, // pink → violet
-    { text: "Dennis Choquecota", gradient: ["#3b82f6", "#06b6d4"] }, // blue → cyan
+    { text: "Dennis Choquecota", gradient: ["#ec4899", "#8b5cf6"] },
+    { text: "Desarrollador Full Stack", gradient: ["#3b82f6", "#06b6d4"] },
   ];
 
   const [index, setIndex] = useState(0);
-
-  // Cambio automático de texto
   useEffect(() => {
     const cambio = setInterval(() => {
       setIndex((prev) => (prev + 1) % textos.length);
-    }, 4000); // 4s para que encaje con la animación
+    }, 4000);
 
     return () => clearInterval(cambio);
   }, []);
-
-  // Animación del texto
   useEffect(() => {
     if (!textRef.current) return;
 
-    // Actualizamos el contenido
     textRef.current.textContent = textos[index].text;
 
-    // SplitText crea spans para cada palabra
     const { words } = splitText(textRef.current, { words: { wrap: "clip" } });
 
-    // Aplicamos gradiente a cada palabra
     words.forEach((word: HTMLElement) => {
-      word.style.backgroundImage = `linear-gradient(to right, ${textos[index].gradient[0]}, ${textos[index].gradient[1]})`;
+  word.style.backgroundImage = `linear-gradient(to right, ${textos[index].gradient[0]}, ${textos[index].gradient[1]})`;
+      word.style.backgroundSize = "200% 200%"; // necesario para animar
       word.style.webkitBackgroundClip = "text";
       word.style.color = "transparent";
+      word.style.animation = "gradientMove 3s linear infinite"; // aplica la animación a cada palabra
     });
 
-    // Animación vertical
     animate(words, {
       y: [{ to: ["100%", "0%"] }, { to: "-100%", delay: 2200, ease: "in(3)" }],
       duration: 1400,
@@ -54,36 +43,36 @@ export function Hero() {
     });
   }, [index]);
 
-    // useEffect(() => {
-    //   if (descriptionRef.current && buttonsRef.current) {
-    //     animate([descriptionRef.current, buttonsRef.current], {
-    //       opacity: [0, 1],
-    //       translateY: [20, 0],
-    //       delay: stagger(100, { start: 500 }),
-    //       duration: 800,
-    //       easing: "outQuad",
-    //     });
-    //   }
+  // useEffect(() => {
+  //   if (descriptionRef.current && buttonsRef.current) {
+  //     animate([descriptionRef.current, buttonsRef.current], {
+  //       opacity: [0, 1],
+  //       translateY: [20, 0],
+  //       delay: stagger(100, { start: 500 }),
+  //       duration: 800,
+  //       easing: "outQuad",
+  //     });
+  //   }
 
-    //   if (imageRef.current) {
-    //     animate(imageRef.current, {
-    //       opacity: [0, 1],
-    //       scale: [0.8, 1],
-    //       delay: 400,
-    //       duration: 1000,
-    //       easing: "outElastic(1, .8)",
-    //     });
-    //   }
+  //   if (imageRef.current) {
+  //     animate(imageRef.current, {
+  //       opacity: [0, 1],
+  //       scale: [0.8, 1],
+  //       delay: 400,
+  //       duration: 1000,
+  //       easing: "outElastic(1, .8)",
+  //     });
+  //   }
 
-    //   if (circleRef.current) {
-    //     animate(circleRef.current, {
-    //       rotate: 360,
-    //       duration: 10000,
-    //       loop: true,
-    //       easing: "linear",
-    //     });
-    //   }
-    // }, []);
+  //   if (circleRef.current) {
+  //     animate(circleRef.current, {
+  //       rotate: 360,
+  //       duration: 10000,
+  //       loop: true,
+  //       easing: "linear",
+  //     });
+  //   }
+  // }, []);
 
   return (
     <section
@@ -100,21 +89,20 @@ export function Hero() {
             Hola soy
             <div className="relative h-[1.2em] mt-5 overflow-visible">
               <p
-  ref={textRef}
-  className="absolute left-0 right-0 lg:left-0 lg:right-auto whitespace-nowrap text-transparent"
-  style={{
-    backgroundImage: `linear-gradient(to right, ${textos[0].gradient[0]}, ${textos[0].gradient[1]})`,
-    WebkitBackgroundClip: "text",
-    color: "transparent",
-  }}
->
-  {textos[0].text}
-</p>
+                ref={textRef}
+                className="absolute left-0 right-0 lg:left-0 lg:right-auto whitespace-nowrap text-transparent gradient-animate"
+                style={{
+                  backgroundImage: `linear-gradient(to right, ${textos[0].gradient[0]}, ${textos[0].gradient[1]})`,
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                {textos[0].text}
+              </p>
             </div>
           </h1>
 
-          <p
-          className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
             Desarrollador Full Stack con más de 2 años de experiencia creando
             aplicaciones ágiles, funcionales y bien estructuradas.
           </p>
