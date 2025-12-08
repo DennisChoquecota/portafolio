@@ -8,3 +8,84 @@
   background-size: 200% 200%;
   animation: gradientMove 3s linear infinite;
 }
+
+/* BTN ANIMATED */
+.btn-animated {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-animated::before,
+.btn-animated::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  transform: skewX(25deg);
+  background-color: rgba(16, 16, 16, 0.1);
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.btn-animated:hover::before {
+  left: -10%;
+}
+.btn-animated:hover::after {
+  left: -20%;
+}
+
+/*BTN ANIMATED COLOR-LIGTH*/
+.btn-ligth {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-ligth::before,
+.btn-ligth::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  transform: skewX(25deg);
+  background-color: currentColor;
+  opacity: 0.10; /* más bajo = más sutil */
+  mix-blend-mode: multiply; /* o darken */
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.btn-ligth:hover::before {
+  left: -10%;
+}
+.btn-ligth:hover::after {
+  left: -20%;
+}
+
+/* ICON ANIMATION */
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.vibrate:hover {
+  animation: vibrate 0.4s linear 1; /* <--- La animación se repite 3 veces */
+}
+
+/* BACKGROUND GRID PATTERN */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  /* mask-image: linear-gradient(to bottom, black 40%, transparent 100%); */
+  /* -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%); */
+}

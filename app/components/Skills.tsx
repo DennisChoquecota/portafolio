@@ -56,6 +56,7 @@ export function Skills() {
 
   return (
     <section id="skills" className="py-24 bg-neutral-950 relative">
+      <div className="absolute inset-0 z-20" />
       <div ref={sectionRef} className="container mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">
           <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">

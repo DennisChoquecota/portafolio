@@ -67,7 +67,8 @@ export function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 bg-neutral-900">
+    <section id="projects" className="py-24 z-20">
+      <div className="absolute inset-0 z-20" />
       <div ref={sectionRef} className="container mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">
           Featured{" "}

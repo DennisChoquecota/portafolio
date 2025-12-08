@@ -41,10 +41,10 @@ export function Hero() {
           { to: ["100%", "0%"] },
           { to: "-100%", delay: 2500, ease: "in(3)" },
         ],
-        opacity: [
-          { to: [0, 1], duration: 100 },
-          { to: 0, delay: 2500, duration: 300 },
-        ],
+        // opacity: [
+        //   { to: [0, 1], duration: 100 },
+        //   { to: 0, delay: 2500, duration: 300 },
+        // ],
         duration: 800,
         ease: "out(3)",
         delay: stagger(100),
@@ -78,8 +78,10 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden"
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-600/20 rounded-full blur-[120px] -z-10" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[100px] -z-10" />
+      {/* Fondos */}
+      <div className="absolute inset-0 z-20" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] z-10" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px] z-10" />
 
       <div className="container mx-auto px-14 z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left order-2 lg:order-1">
@@ -97,18 +99,18 @@ export function Hero() {
             ref={descriptionRef}
             className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed opacity-0"
           >
-            Desarrollador Full Stack con más de 2 años de experiencia creando
-            aplicaciones ágiles, funcionales y bien estructuradas.
+            Con más de 2 años de experiencia creando aplicaciones ágiles,
+            funcionales y bien estructuradas.
           </p>
 
           <div
             ref={buttonsRef}
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 opacity-0"
           >
-            <button className="px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300">
+            <button className="px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300 btn-animated">
               View Projects
             </button>
-            <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300">
+            <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 btn-ligth">
               Contact Me
             </button>
           </div>

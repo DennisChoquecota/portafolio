@@ -4,8 +4,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-neutral-950 border-t border-white/5"
+      className="py-24 border-t border-white/5"
     >
+      <div className="absolute inset-0 z-20" />
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-8">
           Ready to <span className="text-white">create</span> something?

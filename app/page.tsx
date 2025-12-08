@@ -8,7 +8,7 @@ import { Contact } from "./components/Contact";
 
 export default function Home() {
   return (
-    <main className="bg-neutral-950 text-white min-h-screen selection:bg-pink-500/30">
+    <main className="min-h-screen bg-grid-pattern">
       <Navbar />
       <Hero />
       <Skills />
