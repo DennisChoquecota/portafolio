@@ -72,7 +72,7 @@ export function Skills() {
         if (neonInstances.current[idx]) {
           neonInstances.current[idx].cancel();
         }
-        el.style.setProperty("--p", "-20%");
+        el.style.setProperty("--p", "-200%");
       };
 
       el.addEventListener("mouseenter", onEnter);

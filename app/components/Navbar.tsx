@@ -40,7 +40,7 @@ export function Navbar() {
           href="#home"
           className="neon-text text-2xl font-bold font-mono tracking-tighter text-white"
         >
-          DENN<span className="neon-dot text-pink-500">.</span>
+          DENN<span className="neon-dot text-pink-100 gradient-animate bg-gradient-to-r from-pink-400 to-violet-900 bg-clip-text text-transparent">.</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
