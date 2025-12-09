@@ -99,7 +99,7 @@ export function Hero() {
             ref={descriptionRef}
             className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed opacity-0"
           >
-            Con más de 2 años de experiencia creando aplicaciones ágiles,
+            Con más de 1 año de experiencia creando aplicaciones ágiles,
             funcionales y bien estructuradas.
           </p>
 
@@ -108,10 +108,10 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 opacity-0"
           >
             <button className="px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300 btn-animated">
-              View Projects
+              Ver Proyectos
             </button>
             <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 btn-ligth">
-              Contact Me
+              Contactarme
             </button>
           </div>
         </div>

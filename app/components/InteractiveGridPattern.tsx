@@ -1,20 +1,20 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Cell = { x: number; y: number; id: number; created: number };
 
 export default function InteractiveGridPattern() {
   const [hoveredCells, setHoveredCells] = useState<Cell[]>([]);
-  const [time, setTime] = useState<number>(Date.now()); // actualiza por RAF para animaciones suaves
+  const [time, setTime] = useState<number>(Date.now());
   const cellSize = 40;
   const idCounter = useRef(0);
   const rafRef = useRef<number | null>(null);
   const lastPosRef = useRef<{ x: number; y: number } | null>(null);
 
   // configuración
-  const lifespan = 800; // ms que vive una celda antes de desaparecer completamente
-  const maxTrail = 10; // máximo de celdas en el array (opcional)
+  const lifespan = 800;
+  const maxTrail = 10;
 
   useEffect(() => {
     // RAF loop — actualiza `time` constantemente para forzar re-render y recalcular opacidades
@@ -57,7 +57,6 @@ export default function InteractiveGridPattern() {
       window.removeEventListener("mousemove", handleMouseMove);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-    // cellSize, lifespan y maxTrail son constantes en este scope — si los haces props, añade deps
   }, []);
 
   // Limpieza: también filtra celdas caducadas en el render (no hace falta interval)

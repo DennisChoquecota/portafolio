@@ -97,3 +97,41 @@
   filter: blur(2px);
   border-radius: 4px;
 }
+
+/* ------ */
+
+
+.skill-card {
+  --p: -20%;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* Grosor del borde */
+  background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(255 0 128),
+      rgb(190 0 255),
+      transparent
+  );
+  background-size: 200% 100%;
+  background-position: var(--p) 0%;
+  filter: drop-shadow(0 0 8px rgb(255 0 128 / 0.7));
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+}

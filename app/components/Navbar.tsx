@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Inicio", href: "#home" },
+  { name: "Habilidades", href: "#skills" },
+  { name: "Proyectos", href: "#projects" },
+  { name: "Contacto", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -63,7 +63,7 @@ export function Navbar() {
             onClick={(e) => handleScrollTo(e, "#contact")}
             className="px-4 py-2 bg-white text-black text-sm font-bold rounded-full hover:bg-neutral-200 transition-colors"
           >
-            Hire Me
+            CV
           </a>
         </div>
       </div>
