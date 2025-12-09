@@ -33,18 +33,14 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        
-         "bg-neutral-950/80 backdrop-blur-md border-b border-white/10 py-4"
-        
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${"bg-neutral-950/80 backdrop-blur-md border-b border-white/10 py-4"}`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#home"
-          className="text-2xl font-bold font-mono tracking-tighter text-white"
+          className="neon-text text-2xl font-bold font-mono tracking-tighter text-white"
         >
-          DEV<span className="text-pink-500">.</span>
+          DENN<span className="neon-dot text-pink-500">.</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">

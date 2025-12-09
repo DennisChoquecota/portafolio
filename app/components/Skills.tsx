@@ -102,8 +102,8 @@ export function Skills() {
             <div
               key={skill.name}
               ref={(el) => {
-  itemsRef.current[index] = el;
-}}
+                itemsRef.current[index] = el;
+              }}
               className="skill-card p-6 rounded-2xl bg-neutral-900 border border-white/5 transition-colors duration-300 flex flex-col items-center justify-center gap-4 opacity-0 translate-y-4 group relative"
             >
               <div className="text-pink-500 group-hover:text-violet-500 transition-colors duration-300">
