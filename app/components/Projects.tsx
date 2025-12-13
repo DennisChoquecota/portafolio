@@ -53,7 +53,7 @@ const projects = [
 
 export function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const itemsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -93,12 +93,15 @@ export function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
               key={index}
               ref={(el) => {
                 itemsRef.current[index] = el;
               }}
-              className="group relative overflow-hidden rounded-xl bg-neutral-800 aspect-[4/3] opacity-0 shadow-lg hover:shadow-violet-500/20 transition-all duration-500"
+              className="group relative overflow-hidden rounded-xl bg-neutral-800 aspect-[4/3] opacity-0 shadow-lg hover:shadow-violet-500/20 transition-all duration-500 block"
             >
               <img
                 src={`https://s0.wordpress.com/mshots/v1/${encodeURIComponent(
@@ -131,7 +134,7 @@ export function Projects() {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
