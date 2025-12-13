@@ -11,6 +11,9 @@ import {
   SiNodedotjs,
   SiPostgresql,
   SiSupabase,
+  SiPhp,
+  SiLaravel,
+  SiJavascript,
 } from "react-icons/si";
 
 const projects = [
@@ -20,8 +23,10 @@ const projects = [
     url: "https://tacna.com.pe/",
     technologies: [
       { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
-      { name: "React", icon: SiReact, color: "text-cyan-400" },
+      { name: "Typescript", icon: SiTypescript, color: "text-blue-500" },
+      { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-300" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
+      { name: "Laravel", icon: SiLaravel, color: "text-red-500" },
     ],
   },
   {
@@ -30,18 +35,18 @@ const projects = [
     url: "https://landing-page-react-ts-kohl.vercel.app/",
     technologies: [
       { name: "React", icon: SiReact, color: "text-cyan-400" },
-      { name: "Vite", icon: SiVite, color: "text-purple-400" },
+      { name: "Javascript", icon: SiJavascript, color: "text-yellow-400" },
       { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-300" },
     ],
   },
   {
-    title: "Mi libreria",
+    title: "Mi libreria v.1",
     category: "Full Stack",
     url: "https://startup-page-ytu1.vercel.app/",
     technologies: [
-      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
-      { name: "Supabase", icon: SiSupabase, color: "text-emerald-400" },
+      { name: "React", icon: SiReact, color: "text-cyan-400" },
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+      { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-300" },
     ],
   },
 ];
@@ -96,7 +101,9 @@ export function Projects() {
               className="group relative overflow-hidden rounded-xl bg-neutral-800 aspect-[4/3] opacity-0 shadow-lg hover:shadow-violet-500/20 transition-all duration-500"
             >
               <img
-                src={`https://image.thum.io/get/width/600/crop/800/noanimate/${project.url}`}
+                src={`https://s0.wordpress.com/mshots/v1/${encodeURIComponent(
+                  project.url
+                )}?w=800`}
                 alt={project.title}
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:blur-[2px]"
               />
