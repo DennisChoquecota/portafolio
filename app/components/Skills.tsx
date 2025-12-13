@@ -86,7 +86,7 @@ export function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="py-24 bg-neutral-950 relative">
+    <section id="skills" className="py-24 relative">
       <div className="absolute inset-0 z-20 pointer-events-none" />
 
       <div ref={sectionRef} className="container mx-auto px-6">
