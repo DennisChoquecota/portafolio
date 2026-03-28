@@ -33,6 +33,7 @@ const projects = [
     title: "Facturala",
     category: "Frontend",
     url: "https://www.facturala.pe/",
+    image: "/img_facturala.png",
     technologies: [
       { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
       { name: "Typescript", icon: SiTypescript, color: "text-blue-500" },
@@ -71,7 +72,7 @@ export function Projects() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -104,8 +105,8 @@ export function Projects() {
               className="group relative overflow-hidden rounded-xl bg-neutral-800 aspect-[4/3] opacity-0 shadow-lg hover:shadow-violet-500/20 transition-all duration-500 block"
             >
               <img
-                src={`https://s0.wordpress.com/mshots/v1/${encodeURIComponent(
-                  project.url
+                src={project.image || `https://s0.wordpress.com/mshots/v1/${encodeURIComponent(
+                  project.url,
                 )}?w=800`}
                 alt={project.title}
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:blur-[2px]"
