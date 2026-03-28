@@ -30,18 +30,18 @@ const projects = [
     ],
   },
   {
-    title: "Landing page",
+    title: "Facturala",
     category: "Frontend",
-    url: "https://landing-page-react-ts-kohl.vercel.app/",
+    url: "https://www.facturala.pe/",
     technologies: [
-      { name: "React", icon: SiReact, color: "text-cyan-400" },
-      { name: "Javascript", icon: SiJavascript, color: "text-yellow-400" },
+      { name: "Next.js", icon: SiNextdotjs, color: "text-cyan-400" },
+      { name: "Typescript", icon: SiTypescript, color: "text-yellow-400" },
       { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-300" },
     ],
   },
   {
     title: "Mi libreria v.1",
-    category: "Full Stack",
+    category: "Frontend",
     url: "https://startup-page-ytu1.vercel.app/",
     technologies: [
       { name: "React", icon: SiReact, color: "text-cyan-400" },

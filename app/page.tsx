@@ -15,7 +15,10 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
-      <Contact />
+      {/* <Contact /> */}
+      <div className="min-h-screen flex items-center justify-center">
+        Aqui mi contact...
+      </div>
     </main>
   );
 }
