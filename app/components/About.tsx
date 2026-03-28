@@ -32,7 +32,7 @@ export function About() {
             if (titleRef.current) {
               animate(titleRef.current, {
                 opacity: [0, 1],
-                translateX: [-100, 0], // Mover desde -100px a 0px (izquierda)
+                translateX: [-50, 0], // Reducido de 100 a 50 para evitar overflow en móvil
                 duration: 800,
                 easing: "outQuad",
               });
@@ -57,9 +57,9 @@ export function About() {
             if (imageRef.current) {
               animate(imageRef.current, {
                 opacity: [0, 1],
-                translateX: [100, 0], // Mover desde 100px a 0px (derecha)
+                translateX: [50, 0], // Reducido de 100 a 50 para evitar overflow en móvil
                 duration: 800,
-                delay: 200, // Retraso ligero para sincronizar
+                delay: 200,
                 easing: "outQuad",
               });
             }
@@ -87,16 +87,15 @@ export function About() {
 
   return (
     <section
-      ref={sectionRef} // Asignamos la referencia para el Intersection Observer
+      ref={sectionRef}
       id="about"
-      className="py-15 relative overflow-hidden bg-neutral-950"
+      className="py-20 relative overflow-hidden bg-neutral-950"
     >
-      <div className="container mx-25 px-14 z-10 grid grid-cols-1 lg:grid-cols-2 gap-1 items-center">
+      <div className="container mx-auto px-6 md:px-14 lg:px-20 max-w-7xl z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Columna de Texto */}
-        <div className="text-center lg:text-center">
+        <div className="text-center lg:text-left order-2 lg:order-1">
           <h2
             ref={titleRef}
-            // Opacidad inicial 0 y will-change-transform para la animación.
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 text-transparent bg-clip-text gradient-animate bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 will-change-transform" 
           >
             Sobre Mí
@@ -104,7 +103,6 @@ export function About() {
 
           <p
             ref={contentRef}
-            // Opacidad inicial 0 y will-change-transform para la animación.
             className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed opacity-0 will-change-transform"
           >
             Apasionado por transformar ideas en experiencias web memorables. Creo interfaces limpias y soluciones escalables que combinan rendimiento y diseño. Siempre explorando nuevas tecnologías, llevo cada proyecto un paso más allá para que destaque y funcione impecablemente.
@@ -114,7 +112,7 @@ export function About() {
         {/* Columna de Imagen/Visual */}
         <div
           ref={imageRef}
-          className="order-1 lg:order-2 w-100 flex justify-center opacity-0 will-change-transform"
+          className="order-1 lg:order-2 w-full flex justify-center opacity-0 will-change-transform"
         >
           <div className="gradient-animate bg-gradient-to-r from-cyan-500 to-blue-600 w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center border-4 border-blue-500/50 shadow-2xl shadow-blue-500/30">
             {/* Asegúrate de que esta ruta de imagen sea correcta, o usa un componente <Image> de Next.js */}

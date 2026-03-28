@@ -80,12 +80,12 @@ export function Hero() {
     >
       {/* Fondos */}
       <div className="absolute inset-0 z-20" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] z-10" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px] z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full blur-[80px] md:blur-[120px] bg-blue-500/10 z-10" />
+      <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] rounded-full blur-[60px] md:blur-[100px] bg-purple-500/10 z-10" />
 
-      <div className="container mx-auto px-14 z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 md:px-14 lg:px-20 z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left order-2 lg:order-1">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
             Hola soy
             <div className="relative h-[1.2em] mt-5 overflow-visible">
               <p

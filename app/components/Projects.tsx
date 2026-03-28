@@ -34,8 +34,8 @@ const projects = [
     category: "Frontend",
     url: "https://www.facturala.pe/",
     technologies: [
-      { name: "Next.js", icon: SiNextdotjs, color: "text-cyan-400" },
-      { name: "Typescript", icon: SiTypescript, color: "text-yellow-400" },
+      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "Typescript", icon: SiTypescript, color: "text-blue-500" },
       { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-300" },
     ],
   },
